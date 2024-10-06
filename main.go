@@ -73,7 +73,7 @@ func main() {
 
 // Função que executa o comando para cada domínio
 func runCommand(domain string) {
-	command := fmt.Sprintf(`echo %s | alterx -enrich | gau | dnsx | httpx -silent | grep -a -i =http | qsreplace 'http://evil.com' | while read host; do curl -s -L $host -I | grep 'evil.com' && echo -e "$host \033[0;31mVulnerável\n"; done`, domain)
+	command := fmt.Sprintf(`echo %s | alterx -enrich -silent | gau | dnsx -silent | httpx -silent | grep -a -i =http | qsreplace 'http://evil.com' | while read host; do curl -s -L $host -I | grep 'evil.com' && echo -e "$host \033[0;31mVulnerável\n"; done`, domain)
 
 	cmd := exec.Command("bash", "-c", command)
 
