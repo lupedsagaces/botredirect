@@ -1,5 +1,5 @@
 # Botredirect
-
+Ferramenta para busca de vulnerabilidade de openredirect com base em uma lista de domínio/subdomínios
 O script verifica se existe um arquivo com o prefixo _fulldomains200.txt, caso contrário, pede para você informar o nome do arquivo. Em seguida, para cada linha do arquivo, executa o comando descrito e exibe os resultados na tela.
 
 # Instalação
