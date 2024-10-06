@@ -2,6 +2,12 @@
 
 O script verifica se existe um arquivo com o prefixo _fulldomains200.txt, caso contrário, pede para você informar o nome do arquivo. Em seguida, para cada linha do arquivo, executa o comando descrito e exibe os resultados na tela.
 
+# Instalação
+
+```
+go install https://github.com/lupedsagaces/botredirect@latest
+```
+
 **após vários testes, o oneliner ficou assim:**
 ```bash
 echo exemplo.com | alterx -enrich | waybackurls | dnsx | httpx -silent -mc 302 | grep -a -i \=http | qsreplace 'http://evil.com' | while read host do;do curl -s -L $host -I|grep “evil.com” && echo -e “$host \033[0;31mVulnerable\n” ;done
