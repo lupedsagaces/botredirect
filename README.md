@@ -5,7 +5,8 @@ O script verifica se existe um arquivo com o prefixo _fulldomains200.txt, caso c
 # Instalação
 
 ```
-go install https://github.com/lupedsagaces/botredirect@latest
+go install github.com/lupedsagaces/botredirect@latest
+
 ```
 
 **após vários testes, o oneliner ficou assim:**
