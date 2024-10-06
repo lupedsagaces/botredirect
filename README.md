@@ -11,7 +11,7 @@ go install github.com/lupedsagaces/botredirect@latest
 
 **após vários testes, o oneliner ficou assim:**
 ```bash
-echo exemplo.com | alterx -enrich | waybackurls | dnsx | httpx -silent -mc 302 | grep -a -i \=http | qsreplace 'http://evil.com' | while read host do;do curl -s -L $host -I|grep “evil.com” && echo -e “$host \033[0;31mVulnerable\n” ;done
+echo exemplo.com | alterx -enrich | gau | dnsx | httpx -silent -mc 302 | grep -a -i \=http | qsreplace 'http://evil.com' | while read host do;do curl -s -L $host -I|grep “evil.com” && echo -e “$host \033[0;31mVulnerable\n” ;done
 ```
 
 
